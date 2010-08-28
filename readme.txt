@@ -1,4 +1,4 @@
-=== Recipe of the Day ===
+=== Joke of the Day ===
 Contributors: allis741 
 Donate link: http://www.onlinerel.com/wp-social-bookmarking/
 Tags: widget, joke, post, posts, link, links, promote, SEO
