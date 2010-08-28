@@ -9,7 +9,7 @@ Author URI: http://www.onlinerel.com/wp-social-bookmarking/
 License: GPL2
 */
 
-define(joke_day_READER_URL_RSS_DEFAULT, 'http://fun.onlinerel.com/feed');
+define(joke_day_READER_URL_RSS_DEFAULT, 'http://fun.onlinerel.com/category/jokes/feed/rss/');
 define(joke_day_READER_TITLE, 'Joke of the Day');
 define(joke_day_MAX_SHOWN_ITEMS, 3);
 
