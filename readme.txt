@@ -4,7 +4,7 @@ Donate link: http://www.onlinerel.com/wp-social-bookmarking/
 Tags: widget, joke, post, posts, link, links, promote, SEO
 Requires at least: 2.5
 Tested up to: 3.0.1
-Stable tag: 1.0
+Stable tag: 1.1
 
 Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 70,000 jokes in 70 categories.
  
