@@ -3,7 +3,7 @@
 Plugin Name: Joke of the Day
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
 Description: Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database. 
-Version: 1.6
+Version: 1.7
 Author: A.Kilius
 Author URI: http://www.onlinerel.com/wordpress-plugins/
 License: GPL2
@@ -105,6 +105,21 @@ function joke_day_options() {
 		<h2>Joke of the Day</h2>
 <p><b>Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database, so you don't need to have space for all that information. </b> </p>
 <p> <h3>Add the widget "Joke of the Day"  to your sidebar from Appearance->Widgets and configure the widget options.</h3></p>
+ <hr /> <hr />
+  <h2>Jobs Finder</h2>
+<p><b>Plugin "Jobs Finder" gives visitors the opportunity to more than 1 million offer of employment.
+Jobs search for U.S., Canada, UK, Australia</b> </p>
+<h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/jobs-finder/">Jobs Finder</h3></a>
+ <hr /> <hr />
+ <h2>Real Estate Finder</h2>
+<p><b>Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
+Real estate search for U.S., Canada, UK, Australia</b> </p>
+<h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/real-estate-finder/">Real Estate Finder</h3></a>
+ <hr /> <hr />	
+ <h2>Funny video online</h2>
+<p><b>Plugin "Funny video online" displays Funny video on your blog. There are over 10,000 video clips.
+Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
+ <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/funny-video-online/">Funny video online</h3></a> 
  <hr /> <hr />
 		<h2>Recipe of the Day</h2>
 <p><b>Plugin "Recipe of the Day" displays categorized recipes on your blog. There are over 20,000 recipes in 40 categories. Recipes are saved on our database, so you don't need to have space for all that information.</b> </p>
