@@ -3,16 +3,14 @@
 Plugin Name: Joke of the Day
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
 Description: Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database. 
-Version: 1.7
+Version: 1.8
 Author: A.Kilius
 Author URI: http://www.onlinerel.com/wordpress-plugins/
 License: GPL2
 */
-
-define(joke_day_READER_URL_RSS_DEFAULT, 'http://fun.onlinerel.com/category/jokes/feed/rss/');
-define(joke_day_READER_TITLE, 'Joke of the Day');
+define(joke_day_URL_RSS_DEFAULT, 'http://fun.onlinerel.com/category/jokes/feed/rss/');
+define(joke_day_TITLE, 'Joke of the Day');
 define(joke_day_MAX_SHOWN_ITEMS, 3);
-
 
 function joke_day_widget_ShowRss($args)
 {
@@ -26,12 +24,11 @@ function joke_day_widget_ShowRss($args)
 	$options = get_option('joke_day_widget');
 
 	if( $options == false ) {
-		$options[ 'joke_day_widget_url_title' ] = joke_day_READER_TITLE;
-		$options[ 'joke_day_widget_RSS_url' ] = joke_day_READER_URL_RSS_DEFAULT;
+		$options[ 'joke_day_widget_url_title' ] = joke_day_TITLE;
 		$options[ 'joke_day_widget_RSS_count_items' ] = joke_day_MAX_SHOWN_ITEMS;
 	}
 
- $RSSurl = joke_day_READER_URL_RSS_DEFAULT;
+ $RSSurl = joke_day_URL_RSS_DEFAULT;
 	$messages = fetch_rss($RSSurl);
 	$image = plugins_url().'/joke-of-the-day/joke.jpg';
 	$title = $options[ 'joke_day_widget_url_title' ];
@@ -63,13 +60,11 @@ function joke_day_widget_Admin()
 	$options = $newoptions = get_option('joke_day_widget');	
 	//default settings
 	if( $options == false ) {
-		$newoptions[ 'joke_day_widget_url_title' ] = joke_day_READER_TITLE;
-		$newoptions[ 'joke_day_widget_RSS_url' ] = joke_day_READER_URL_RSS_DEFAULT;
+		$newoptions[ 'joke_day_widget_url_title' ] = joke_day_TITLE;
 		$newoptions['joke_day_widget_RSS_count_items'] = joke_day_MAX_SHOWN_ITEMS;		
 	}
 	if ( $_POST["joke_day_widget-submit"] ) {
 		$newoptions['joke_day_widget_url_title'] = strip_tags(stripslashes($_POST["joke_day_widget_url_title"]));
-		$newoptions['joke_day_widget_RSS_url'] = joke_day_READER_URL_RSS_DEFAULT;
 		$newoptions['joke_day_widget_RSS_count_items'] = strip_tags(stripslashes($_POST["joke_day_widget_RSS_count_items"]));
 	}	
 		
@@ -78,7 +73,6 @@ function joke_day_widget_Admin()
 		update_option('joke_day_widget', $options);		
 	}
 	$joke_day_widget_url_title = wp_specialchars($options['joke_day_widget_url_title']);
-	$joke_day_widget_RSS_url = joke_day_READER_URL_RSS_DEFAULT;	
 	$joke_day_widget_RSS_count_items = $options['joke_day_widget_RSS_count_items'];
 	
 	?><form method="post" action="">	
@@ -94,37 +88,52 @@ function joke_day_widget_Admin()
 }
 
 add_action('admin_menu', 'joke_day_menu');
-
 function joke_day_menu() {
 	add_options_page('Joke of the Day', 'Joke of the Day', 8, __FILE__, 'joke_day_options');
 }
+
+add_filter("plugin_action_links", 'joke_day_ActionLink', 10, 2);
+function joke_day_ActionLink( $links, $file ) {
+	    static $this_plugin;		
+		if ( ! $this_plugin ) $this_plugin = plugin_basename(__FILE__); 
+        if ( $file == $this_plugin ) {
+			$settings_link = "<a href='".admin_url( "options-general.php?page=".$this_plugin )."'>". __('Settings') ."</a>";
+			array_unshift( $links, $settings_link );
+		}
+		return $links;
+	}
 
 function joke_day_options() {	
 	?>
 	<div class="wrap">
 		<h2>Joke of the Day</h2>
 <p><b>Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database, so you don't need to have space for all that information. </b> </p>
-<p> <h3>Add the widget "Joke of the Day"  to your sidebar from Appearance->Widgets and configure the widget options.</h3></p>
+<p> <h3>Add the widget "Joke of the Day"  to your sidebar from <a href="<? echo "./widgets.php";?>"> Appearance->Widgets</a>  and configure the widget options.</h3></p>
  <hr /> <hr />
+    <h2>Funny photos</h2>
+<p><b>Plugin "Funny Photos" displays Best photos of the day and Funny photos on your blog. There are over 5,000 photos.
+Add Funny Photos to your sidebar on your blog using  a widget.</b> </p>
+ <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/funny-photos/">Funny photos</h3></a> 
+  <hr />	
   <h2>Jobs Finder</h2>
 <p><b>Plugin "Jobs Finder" gives visitors the opportunity to more than 1 million offer of employment.
 Jobs search for U.S., Canada, UK, Australia</b> </p>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/jobs-finder/">Jobs Finder</h3></a>
- <hr /> <hr />
+ <hr />
  <h2>Real Estate Finder</h2>
 <p><b>Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
 Real estate search for U.S., Canada, UK, Australia</b> </p>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/real-estate-finder/">Real Estate Finder</h3></a>
- <hr /> <hr />	
+ <hr />	
  <h2>Funny video online</h2>
 <p><b>Plugin "Funny video online" displays Funny video on your blog. There are over 10,000 video clips.
 Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
  <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/funny-video-online/">Funny video online</h3></a> 
- <hr /> <hr />
+ <hr />
 		<h2>Recipe of the Day</h2>
 <p><b>Plugin "Recipe of the Day" displays categorized recipes on your blog. There are over 20,000 recipes in 40 categories. Recipes are saved on our database, so you don't need to have space for all that information.</b> </p>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/recipe-of-the-day/">Recipe of the Day</h3></a>
- <hr /> <hr />
+ <hr />
  <h2>WP Social Bookmarking</h2>
 <p><b>WP-Social-Bookmarking plugin will add a image below your posts, allowing your visitors to share your posts with their friends, on FaceBook, Twitter, Myspace, Friendfeed, Technorati, del.icio.us, Digg, Google, Yahoo Buzz, StumbleUpon.</b></p>
 <p><b>Plugin suport sharing your posts feed on <a href="http://www.onlinerel.com/">OnlineRel</a>. This helps to promote your blog and get more traffic.</b></p>
