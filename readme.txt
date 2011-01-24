@@ -32,6 +32,9 @@ Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.
 
 == Changelog ==
 
+ = 2.1.1 =
+Update readme.txt file.
+                                                                                    
  = 2.1 =
 Script Update.
 
