@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Joke of the Day
-Version: 2.0
+Version: 2.1
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
 Description: Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database. 
 Author: A.Kilius
@@ -27,7 +27,7 @@ function joke_day_widget_ShowRss($args)
 		$options[ 'joke_day_widget_url_title' ] = joke_day_TITLE;
 		$options[ 'joke_day_widget_RSS_count_items' ] = joke_day_MAX_SHOWN_ITEMS;
 	}
-
+                                                                                                       
  $RSSurl = joke_day_URL_RSS_DEFAULT;
 	$messages = fetch_rss($RSSurl);
 	$image = plugins_url().'/joke-of-the-day/joke.jpg';

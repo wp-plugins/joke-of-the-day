@@ -32,6 +32,9 @@ Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.
 
 == Changelog ==
 
+ = 2.1 =
+Script Update.
+
  = 2.0 =
 Tested upto 3.1 WP 
 
