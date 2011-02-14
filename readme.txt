@@ -28,9 +28,13 @@ If you're interested in seeing what a default installation of Joke of the Day ha
 
 == Frequently Asked Questions ==
 
-Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.
+Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.                                                        
+                                                                  
 
 == Changelog ==
+
+ = 2.2 =
+Script Update.
 
  = 2.1.1 =
 Update readme.txt file.
