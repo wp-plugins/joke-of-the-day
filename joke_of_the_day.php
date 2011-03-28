@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Joke of the Day
-Version: 2.2
+Version: 2.3
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
 Description: Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database. 
 Author: A.Kilius
@@ -14,21 +14,17 @@ define(joke_day_MAX_SHOWN_ITEMS, 3);
 
 function joke_day_widget_ShowRss($args)
 {
-	//@ini_set('allow_url_fopen', 1);	
 	if( file_exists( ABSPATH . WPINC . '/rss.php') ) {
 		require_once(ABSPATH . WPINC . '/rss.php');		
 	} else {
 		require_once(ABSPATH . WPINC . '/rss-functions.php');
 	}
-	                    
-	$options = get_option('joke_day_widget');
-
-	if( $options == false ) {
+ 	$options = get_option('joke_day_widget');
+ 	if( $options == false ) {
 		$options[ 'joke_day_widget_url_title' ] = joke_day_TITLE;
 		$options[ 'joke_day_widget_RSS_count_items' ] = joke_day_MAX_SHOWN_ITEMS;                              
 	}
-                                                                                                       
- $RSSurl = joke_day_URL_RSS_DEFAULT;
+  $RSSurl = joke_day_URL_RSS_DEFAULT;
 	$messages = fetch_rss($RSSurl);
   $title = $options[ 'joke_day_widget_url_title' ];                                                                 
 	                                                                                                              
@@ -44,8 +40,7 @@ function joke_day_widget_ShowRss($args)
 	}
 		$output .= '</ul> ';
 	}
-	
-	extract($args);	
+ 	extract($args);	
 	?>
 	<?php echo $before_widget; ?>
 	<?php echo $before_title . $title . $after_title; ?>	
@@ -144,9 +139,8 @@ Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
 <p>Advertise your real estate, cars, items... Buy, Sell, Rent. Free promote your site:
 <ul>
 	<li><a target="_blank" href="http://www.onlinerel.com/">OnlineRel</a></li>
-	<li><a target="_blank" href="http://www.easyfreeads.com/">Easy Free Ads</a></li>
+	<li><a target="_blank" href="http://www.homeshopworld.com/">Home Shop World</a></li>
 	<li><a target="_blank" href="http://www.worldestatesite.com/">World Estate Site</a></li>
-	<li><a target="_blank" href="http://www.facebook.com/pages/EasyFreeAds/106166672771355">Promote site on Facebook</a></li>	
 </ul>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/wp-social-bookmarking/">WP Social Bookmarking</h3></a>
 </p>
@@ -160,6 +154,4 @@ function joke_day_widget_Init()
   register_widget_control(__('Joke of the Day'), 'joke_day_widget_Admin', 500, 250);
 }
 add_action("plugins_loaded", "joke_day_widget_Init");
-                             
-							                                                                                                                                                                                     
 ?>
