@@ -3,7 +3,7 @@ Contributors: allis741
 Donate link: http://www.onlinerel.com/wordpress-plugins/
 Tags: widget, joke, jokes, funny video, funny, funny foto, funny jokes, post, posts, link, links, promote, SEO, category, cloud, sidebar, feed, rss, popular
 Requires at least: 2.5
-Tested up to: 3.1
+Tested up to: 3.1.2
 Stable tag: trunk
 
 Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories.
@@ -33,41 +33,55 @@ Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.
 
 == Changelog ==
 
- = 2.3 =
+= 2.4 =
+                                                                                                                                                                
+Changed http://fun.onlinerel.com  feed.
+Tested up to 3.1.2 version WP
+
+= 2.3 =
  Tested upto 3.1 WP and fix bugs
  
- = 2.2 =
+= 2.2 =
 Script Update.
 
- = 2.1.1 =
+= 2.1.1 =
 Update readme.txt file.
                                                                                     
- = 2.1 =
+= 2.1 =
 Script Update.
 
- = 2.0 =
+= 2.0 =
 Tested upto 3.1 WP 
 
- = 1.9.1 =
+= 1.9.1 =
 Changed works upto 3.0.3 WP 
 
- = 1.8 =
+= 1.8 =
 Script Update.
 
- = 1.7 =
+= 1.7 =
  Fix bugs.
 
- = 1.6 =
+= 1.6 =
 Update tags.
 
- = 1.5 =
+= 1.5 =
  Fix bugs.
 
- = 1.4 =
+= 1.4 =
  Fix bugs.
 
- = 1.3 =
+= 1.3 =
  Fix bugs.
 
- = 1.1 =
+= 1.1 =
  First stable version.
+
+
+== Upgrade Notice ==
+
+= 2.4 =
+
+Automatically upgrade the plugin and all previous settings should remain intact.
+Tested up to 3.1.2 version WP
+Changed http://fun.onlinerel.com  feed.
