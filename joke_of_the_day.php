@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Joke of the Day
-Version: 2.4
+Version: 2.5
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
 Description: Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database. 
 Author: A.Kilius
@@ -57,7 +57,7 @@ function joke_day_widget_Admin()
 		$newoptions[ 'joke_day_widget_url_title' ] = joke_day_TITLE;
 		$newoptions['joke_day_widget_RSS_count_items'] = joke_day_MAX_SHOWN_ITEMS;		
 	}
-	if ( $_POST["joke_day_widget-submit"] ) {
+	if ( $_POST["joke_day_widget_RSS_count_items"] ) {
 		$newoptions['joke_day_widget_url_title'] = strip_tags(stripslashes($_POST["joke_day_widget_url_title"]));
 		$newoptions['joke_day_widget_RSS_count_items'] = strip_tags(stripslashes($_POST["joke_day_widget_RSS_count_items"]));
 	}	
@@ -69,13 +69,11 @@ function joke_day_widget_Admin()
 	$joke_day_widget_url_title = wp_specialchars($options['joke_day_widget_url_title']);
 	$joke_day_widget_RSS_count_items = $options['joke_day_widget_RSS_count_items'];
 	
-	?><form method="post" action="">	
+	?> 
 	<p><label for="joke_day_widget_url_title"><?php _e('Title:'); ?> <input style="width: 350px;" id="joke_day_widget_url_title" name="joke_day_widget_url_title" type="text" value="<?php echo $joke_day_widget_url_title; ?>" /></label></p>
  
 	<p><label for="joke_day_widget_RSS_count_items"><?php _e('Count Items To Show:'); ?> <input  id="joke_day_widget_RSS_count_items" name="joke_day_widget_RSS_count_items" size="2" maxlength="2" type="text" value="<?php echo $joke_day_widget_RSS_count_items?>" /></label></p>	
-	<br clear='all'></p>
-	<input type="hidden" id="joke_day_widget-submit" name="joke_day_widget-submit" value="1" />	
-	</form>
+ 
 	<?php
 }
 
@@ -102,11 +100,6 @@ function joke_day_options() {
 <p><b>Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database, so you don't need to have space for all that information. </b> </p>
 <p> <h3>Add the widget "Joke of the Day"  to your sidebar from <a href="<? echo "./widgets.php";?>"> Appearance->Widgets</a>  and configure the widget options.</h3></p>
  <hr /> <hr />
-  <h2>Blog Promotion</h2>
-<p><b>If you produce original news or entertainment content, you can tap into one of the most technologically advanced traffic exchanges among blogs! Start using our Blog Promotion plugin on your site and receive 150%-300% extra traffic free! 
-Idea is simple - the more traffic you send to us, the more we can send you back.</b> </p>
- <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/blog-promotion/">Blog Promotion</h3></a> 
- <hr />
     <h2>Funny photos</h2>
 <p><b>Plugin "Funny Photos" displays Best photos of the day and Funny photos on your blog. There are over 5,000 photos.
 Add Funny Photos to your sidebar on your blog using  a widget.</b> </p>
@@ -129,8 +122,12 @@ Real estate search for U.S., Canada, UK, Australia</b> </p>
 Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
  <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/funny-video-online/">Funny video online</h3></a> 
  <hr />                        
- 
-		<h2>Recipe of the Day</h2>                                 
+   <h2>Blog Promotion</h2>
+<p><b>If you produce original news or entertainment content, you can tap into one of the most technologically advanced traffic exchanges among blogs! Start using our Blog Promotion plugin on your site and receive 150%-300% extra traffic free! 
+Idea is simple - the more traffic you send to us, the more we can send you back.</b> </p>
+ <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/blog-promotion/">Blog Promotion</h3></a> 
+ <hr />
+		<h2>Recipe of the Day</h2>                              
 
 <p><b>Plugin "Recipe of the Day" displays categorized recipes on your blog. There are over 20,000 recipes in 40 categories. Recipes are saved on our database, so you don't need to have space for all that information.</b> </p>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/recipe-of-the-day/">Recipe of the Day</h3></a>
@@ -141,8 +138,9 @@ Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
 <p>Advertise your real estate, cars, items... Buy, Sell, Rent. Free promote your site:
 <ul>
 	<li><a target="_blank" href="http://www.onlinerel.com/">OnlineRel</a></li>
-	<li><a target="_blank" href="http://www.homeshopworld.com/">Home Shop World</a></li>
-	<li><a target="_blank" href="http://www.worldestatesite.com/">World Estate Site</a></li>
+	<li><a target="_blank" href="http://www.homeshopworld.com">Home Shop World, Free Classified Ads </a></li>
+		<li><a target="_blank" href="http://www.greatjobcenter.com/">Great Job Center. You Are Worth Better Job! </a></li> 
+		<li><a target="_blank" href="http://www.worldestatesite.com/">World Estate Site, Sell your Home, Search Homes</a></li>
 </ul>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/wp-social-bookmarking/">WP Social Bookmarking</h3></a>
 </p>
