@@ -33,7 +33,7 @@ Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.
 
 == Changelog ==
 
-= 2.5 =
+= 2.5.1 =
                                                                                                                                                                 
 Fix widget bugs.
 Tested up to 3.1.3 version WP
@@ -85,14 +85,15 @@ Update tags.
 
 == Upgrade Notice ==
 
+= 2.5.1 =
+
+Automatically upgrade the plugin and all previous settings should remain intact.                                                                                                                                                                
+Fix widget bugs.
+Tested up to 3.1.3 version WP
+
 = 2.4 =
 
 Automatically upgrade the plugin and all previous settings should remain intact.
 Tested up to 3.1.2 version WP
 Changed http://fun.onlinerel.com  feed.
 
-= 2.5 =
-
-Automatically upgrade the plugin and all previous settings should remain intact.                                                                                                                                                                
-Fix widget bugs.
-Tested up to 3.1.3 version WP
