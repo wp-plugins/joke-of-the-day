@@ -1,18 +1,54 @@
 <?php
 /*
 Plugin Name: Joke of the Day
-Version: 2.5.1
+Version: 2.6
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
 Description: Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database. 
 Author: A.Kilius
 Author URI: http://www.onlinerel.com/wordpress-plugins/
 */
 
-define(joke_day_URL_RSS_DEFAULT, 'http://fun.onlinerel.com/category/jokes/feed/rss/');
+define(joke_day_URL_RSS_DEFAULT, 'http://fun.onlinerel.com/category/jokes/feed/');
 define(joke_day_TITLE, 'Joke of the Day');
 define(joke_day_MAX_SHOWN_ITEMS, 3);
 
 function joke_day_widget_ShowRss($args)
+{
+$options = get_option('joke_day_widget');
+ 	if( $options == false ) {
+		$options[ 'joke_day_widget_url_title' ] = joke_day_TITLE;
+		$options[ 'joke_day_widget_RSS_count_items' ] = joke_day_MAX_SHOWN_ITEMS;                              
+	}
+
+ $feed = joke_day_URL_RSS_DEFAULT;
+	$title = $options[ 'joke_day_widget_url_title' ];
+ $rss = fetch_feed( $feed );
+		if ( !is_wp_error( $rss ) ) :
+			$maxitems = $rss->get_item_quantity($options['joke_day_widget_RSS_count_items'] );
+			$items = $rss->get_items( 0, $maxitems );
+				endif;
+	 $output .= '<!-- WP plugin   joke of the Day --> <ul>';	
+	if($items) { 
+ 			foreach ( $items as $item ) :
+				// Create post object                                                           
+  $titlee = trim($item->get_description()); 
+  $output .= '<li> <a href="';
+ $output .=  $item->get_permalink();
+  $output .= '"  title="'.$titlee.'" target="_blank">';
+   $output .= $titlee.'</a> ';
+ 	 $output .= '</li>'; 
+   		endforeach;		
+	}
+			$output .= '</ul> ';	 			
+	extract($args);	
+  echo $before_widget;  
+  echo $before_title . $title . $after_title;  
+ echo $output;  
+ echo $after_widget;      
+ }
+
+
+function joke_day_widget_ShowRss0($args)
 {
 	if( file_exists( ABSPATH . WPINC . '/rss.php') ) {
 		require_once(ABSPATH . WPINC . '/rss.php');		
@@ -99,49 +135,7 @@ function joke_day_options() {
 		<h2>Joke of the Day</h2>
 <p><b>Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database, so you don't need to have space for all that information. </b> </p>
 <p> <h3>Add the widget "Joke of the Day"  to your sidebar from <a href="<? echo "./widgets.php";?>"> Appearance->Widgets</a>  and configure the widget options.</h3></p>
- <hr /> <hr />
-    <h2>Funny photos</h2>
-<p><b>Plugin "Funny Photos" displays Best photos of the day and Funny photos on your blog. There are over 5,000 photos.
-Add Funny Photos to your sidebar on your blog using  a widget.</b> </p>
- <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/funny-photos/">Funny photos</h3></a> 
-  <hr />	
-  <h2>Jobs Finder</h2>
-<p><b>Plugin "Jobs Finder" gives visitors the opportunity to more than 1 million offer of employment.
-Jobs search for U.S., Canada, UK, Australia</b> </p>
-<h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/jobs-finder/">Jobs Finder</h3></a>
- <hr />  
- <h2>Real Estate Finder</h2>    
-<p><b>Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
-Real estate search for U.S., Canada, UK, Australia</b> </p>
-<h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/real-estate-finder/">Real Estate Finder</h3></a>
- <hr />	
- <h2>Funny video online</h2>
-<p><b>Plugin "Funny video online" displays Funny video on your blog. There are over 10,000 video clips.
-Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
- <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/funny-video-online/">Funny video online</h3></a> 
- <hr />                        
-   <h2>Blog Promotion</h2>
-<p><b>If you produce original news or entertainment content, you can tap into one of the most technologically advanced traffic exchanges among blogs! Start using our Blog Promotion plugin on your site and receive 150%-300% extra traffic free! 
-Idea is simple - the more traffic you send to us, the more we can send you back.</b> </p>
- <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/blog-promotion/">Blog Promotion</h3></a> 
- <hr />
-		<h2>Recipe of the Day</h2>     
-<p><b>Plugin "Recipe of the Day" displays categorized recipes on your blog. There are over 20,000 recipes in 40 categories. Recipes are saved on our database, so you don't need to have space for all that information.</b> </p>
-<h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/recipe-of-the-day/">Recipe of the Day</h3></a>
- <hr />
- <h2>WP Social Bookmarking</h2>
-<p><b>WP-Social-Bookmarking plugin will add a image below your posts, allowing your visitors to share your posts with their friends, on FaceBook, Twitter, Myspace, Friendfeed, Technorati, del.icio.us, Digg, Google, Yahoo Buzz, StumbleUpon.</b></p>
-<p><b>Plugin suport sharing your posts feed on <a href="http://www.onlinerel.com/">OnlineRel</a>. This helps to promote your blog and get more traffic.</b></p>
-<p>Advertise your real estate, cars, items... Buy, Sell, Rent. Free promote your site:
-<ul>
-	<li><a target="_blank" href="http://www.onlinerel.com/">OnlineRel</a></li>
-	<li><a target="_blank" href="http://www.homeshopworld.com">Home Shop World, Free Classified Ads </a></li>
-		<li><a target="_blank" href="http://www.greatjobcenter.com/">Great Job Center. You Are Worth Better Job! </a></li> 
-		<li><a target="_blank" href="http://www.worldestatesite.com/">World Estate Site, Sell your Home, Search Homes</a></li>
-</ul>
-<h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/wp-social-bookmarking/">WP Social Bookmarking</h3></a>
-</p>
-	</div>
+ 	</div>
 	<?php
 }
 
