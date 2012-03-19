@@ -1,14 +1,14 @@
 <?php
 /*
 Plugin Name: Joke of the Day
-Version: 2.6
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
-Description: Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database. 
+Description: Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database.
+Version: 2.7
 Author: A.Kilius
 Author URI: http://www.onlinerel.com/wordpress-plugins/
 */
 
-define(joke_day_URL_RSS_DEFAULT, 'http://fun.onlinerel.com/category/jokes/feed/');
+define(joke_day_URL_RSS_DEFAULT, 'http://www.weekendjoy.com/weekend/jokes/');
 define(joke_day_TITLE, 'Joke of the Day');
 define(joke_day_MAX_SHOWN_ITEMS, 3);
 
@@ -47,45 +47,7 @@ $options = get_option('joke_day_widget');
  echo $after_widget;      
  }
 
-
-function joke_day_widget_ShowRss0($args)
-{
-	if( file_exists( ABSPATH . WPINC . '/rss.php') ) {
-		require_once(ABSPATH . WPINC . '/rss.php');		
-	} else {
-		require_once(ABSPATH . WPINC . '/rss-functions.php');
-	}
- 	$options = get_option('joke_day_widget');
- 	if( $options == false ) {
-		$options[ 'joke_day_widget_url_title' ] = joke_day_TITLE;
-		$options[ 'joke_day_widget_RSS_count_items' ] = joke_day_MAX_SHOWN_ITEMS;                              
-	}
-  $RSSurl = joke_day_URL_RSS_DEFAULT;
-	$messages = fetch_rss($RSSurl);
-  $title = $options[ 'joke_day_widget_url_title' ];                                                                 
-	                                                                                                              
-	$messages_count = count($messages->items);
-	if($messages_count != 0){
-		$output = '<ul>';	
-		//	print_r($messages->items);
-	for($i=0; $i<$options['joke_day_widget_RSS_count_items'] && $i<$messages_count; $i++)
-		{		
-		$output .= '<li>';
-		$output .= '<a target ="_blank" href="'.$messages->items[$i]['link'].'">'.$messages->items[$i]['description'].'</a></span>';	
-			$output .= '</li>';
-	}
-		$output .= '</ul> ';
-	}
- 	extract($args);	
-	?>
-	<?php echo $before_widget; ?>
-	<?php echo $before_title . $title . $after_title; ?>	
-	<?php echo $output; ?>
-	<?php echo $after_widget; ?>
-	<?php	
-}
-
-function joke_day_widget_Admin()
+ function joke_day_widget_Admin()
 {
 	$options = $newoptions = get_option('joke_day_widget');	
 	//default settings
