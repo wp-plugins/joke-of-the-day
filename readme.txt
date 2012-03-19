@@ -20,63 +20,64 @@ Plugin "Joke of the Day" displays categorized jokes on your blog. There are over
 
 == Screenshots ==
 
-1. Joke of the Day Widget
+1. Joke of the Day Widget Screenshot
  
 == Changelog ==
 
-= 2.6 =
-Updated code
-Changed new http://www.weekendjoy.com/feed.
+= 2.7 =
+* Updated code
+* Changed new http://www.weekendjoy.com/feed.
+* Upadated screenshot
 
 = 2.6 =
-Tested up to 3.3.1 WP     
-Updated script
+* Tested up to 3.3.1 WP     
+* Updated script
 
 = 2.5.1 =
                                                                                                                                                                 
-Fix widget bugs.
-Tested up to 3.1.3 version WP
+* Fix widget bugs.
+* Tested up to 3.1.3 version WP
 
 = 2.4 =
                                                                                                                                                                 
-Changed http://fun.onlinerel.com  feed.
-Tested up to 3.1.2 version WP
+* Changed http://fun.onlinerel.com  feed.
+* Tested up to 3.1.2 version WP
 
 = 2.3 =
- Tested upto 3.1 WP and fix bugs
+* Tested upto 3.1 WP and fix bugs
  
 = 2.2 =
-Script Update.
+* Script Update.
 
 = 2.1.1 =
-Update readme.txt file.
+* Update readme.txt file.
                                                                                     
 = 2.1 =
-Script Update.
+* Script Update.
 
 = 2.0 =
-Tested upto 3.1 WP 
+* Tested upto 3.1 WP 
 
 = 1.9.1 =
-Changed works upto 3.0.3 WP 
+* Changed works upto 3.0.3 WP 
 
 = 1.8 =
-Script Update.
+* Script Update.
 
 = 1.7 =
- Fix bugs.
+ * Fix bugs.
 
 = 1.6 =
-Update tags.
+* Update tags.
 
 = 1.5 =
- Fix bugs.
+*  Fix bugs.
 
 = 1.4 =
- Fix bugs.
+ * Fix bugs.
 
 = 1.3 =
- Fix bugs.
+ * Fix bugs.
 
 = 1.1 =
- First stable version.
+*  First stable version.
