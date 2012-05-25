@@ -3,14 +3,19 @@
 Plugin Name: Joke of the Day
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
 Description: Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database.
-Version: 2.7
+Version: 2.8
 Author: A.Kilius
 Author URI: http://www.onlinerel.com/wordpress-plugins/
 */
 
-define(joke_day_URL_RSS_DEFAULT, 'http://www.weekendjoy.com/weekend/jokes/');
+define(joke_day_URL_RSS_DEFAULT, 'http://www.jokequiz.com/category/jokes/feed/');
 define(joke_day_TITLE, 'Joke of the Day');
 define(joke_day_MAX_SHOWN_ITEMS, 3);
+
+ add_action('admin_menu', 'joke_day_menu');
+function joke_day_menu() {
+add_menu_page('Joke of the Day', 'Joke of the Day', 8, __FILE__, 'joke_day_options');
+}
 
 function joke_day_widget_ShowRss($args)
 {
@@ -75,11 +80,6 @@ $options = get_option('joke_day_widget');
 	<?php
 }
 
-add_action('admin_menu', 'joke_day_menu');
-function joke_day_menu() {
-	add_options_page('Joke of the Day', 'Joke of the Day', 8, __FILE__, 'joke_day_options');
-}
-
 add_filter("plugin_action_links", 'joke_day_ActionLink', 10, 2);
 function joke_day_ActionLink( $links, $file ) {
 	    static $this_plugin;		
@@ -92,11 +92,12 @@ function joke_day_ActionLink( $links, $file ) {
 	}
 
 function joke_day_options() {	
-	?>
-	<div class="wrap">
+	?> 	<div class="wrap">
 		<h2>Joke of the Day</h2>
 <p><b>Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database, so you don't need to have space for all that information. </b> </p>
-<p> <h3>Add the widget "Joke of the Day"  to your sidebar from <a href="<? echo "./widgets.php";?>"> Appearance->Widgets</a>  and configure the widget options.</h3></p>
+<p> <h3>Add the widget "Joke of the Day"  to your sidebar from <a href="<? echo "./widgets.php";?>"> Appearance->Widgets</a>  and configure the widget options.</h3>
+<h3>More <a href="http://www.onlinerel.com/wordpress-plugins/" target="_blank"> WordPress Plugins</a></h3>
+</p>
  	</div>
 	<?php
 }
