@@ -1,14 +1,14 @@
 <?php
 /*
 Plugin Name: Joke of the Day
-Plugin URI: http://www.onlinerel.com/wordpress-plugins/
+Plugin URI: http://www.premiumresponsive.com/wordpress-plugins/
 Description: Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database.
-Version: 2.8
+Version: 2.9
 Author: A.Kilius
-Author URI: http://www.onlinerel.com/wordpress-plugins/
+Author URI: http://www.premiumresponsive.com/wordpress-plugins/
 */
 
-define(joke_day_URL_RSS_DEFAULT, 'http://www.jokequiz.com/category/jokes/feed/');
+define(joke_day_URL_RSS_DEFAULT, 'http://www.jokerhub.com/category/jokes/feed/');
 define(joke_day_TITLE, 'Joke of the Day');
 define(joke_day_MAX_SHOWN_ITEMS, 3);
 
@@ -96,7 +96,7 @@ function joke_day_options() {
 		<h2>Joke of the Day</h2>
 <p><b>Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database, so you don't need to have space for all that information. </b> </p>
 <p> <h3>Add the widget "Joke of the Day"  to your sidebar from <a href="<? echo "./widgets.php";?>"> Appearance->Widgets</a>  and configure the widget options.</h3>
-<h3>More <a href="http://www.onlinerel.com/wordpress-plugins/" target="_blank"> WordPress Plugins</a></h3>
+<h3>More <a href="http://www.premiumresponsive.com/wordpress-plugins/" target="_blank"> WordPress Plugins</a></h3>
 </p>
  	</div>
 	<?php

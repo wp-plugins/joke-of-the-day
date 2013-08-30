@@ -1,9 +1,9 @@
 === Joke of the Day ===
 Contributors: allis741 
-Donate link: http://www.onlinerel.com/wordpress-plugins/
+Donate link: http://www.premiumresponsive.com/wordpress-plugins/
 Tags: widget, joke, jokes, funny video, funny, funny foto, funny jokes, post, posts, link, links, promote, SEO, category, sidebar, feed, rss
-Requires at least: 2.5
-Tested up to: 3.3.2
+Requires at least: 3.0
+Tested up to: 3.6
 Stable tag: trunk
 
 Plugin "Joke of the Day" displays jokes on your blog. There are over 40,000 jokes in 40 categories.
@@ -24,13 +24,18 @@ Plugin "Joke of the Day" displays categorized jokes on your blog. There are over
  
 == Changelog ==
 
+= 2.9 =
+* Tested up to 3.6 WP     
+* Changed new feed link
+* Updated script
+
 = 2.8 =
 * Tested up to 3.3.2 WP     
 * Updated script
 
 = 2.7 =
 * Updated code
-* Changed new http://www.weekendjoy.com/feed.
+* Changed new feed link
 * Upadated screenshot
 
 = 2.6 =
@@ -44,7 +49,7 @@ Plugin "Joke of the Day" displays categorized jokes on your blog. There are over
 
 = 2.4 =
                                                                                                                                                                 
-* Changed http://fun.onlinerel.com  feed.
+* Changed new feed link
 * Tested up to 3.1.2 version WP
 
 = 2.3 =
