@@ -3,7 +3,7 @@
 Plugin Name: Joke of the Day
 Plugin URI: http://www.premiumresponsive.com/wordpress-plugins/
 Description: Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database.
-Version: 2.9
+Version: 3.0
 Author: A.Kilius
 Author URI: http://www.premiumresponsive.com/wordpress-plugins/
 */

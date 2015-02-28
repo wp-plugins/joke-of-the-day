@@ -24,6 +24,10 @@ Plugin "Joke of the Day" displays categorized jokes on your blog. There are over
  
 == Changelog ==
 
+= 3.0 =
+* Tested up to 4.1.1 WP     
+* Updated script
+
 = 2.9 =
 * Tested up to 3.6 WP     
 * Changed new feed link
