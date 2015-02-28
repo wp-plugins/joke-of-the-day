@@ -3,7 +3,7 @@ Contributors: allis741
 Donate link: http://www.premiumresponsive.com/wordpress-plugins/
 Tags: widget, joke, jokes, funny video, funny, funny foto, funny jokes, post, posts, link, links, promote, SEO, category, sidebar, feed, rss
 Requires at least: 3.0
-Tested up to: 3.6
+Tested up to: 4.1.1
 Stable tag: trunk
 
 Plugin "Joke of the Day" displays jokes on your blog. There are over 40,000 jokes in 40 categories.
